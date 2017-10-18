@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}Reportes{% endblock %}
+{% block body %}
+<div class="jumbotron text-center">
+  <h1>Reportes</h1>
+</div>
+<div class="container-fluid">
+  <a href="/"><button class="btn btn-primary">Generar en excel</button></a>            
+  <h3>Log Reporte</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Fin</th>
+        <th>Id Empresa</th>
+        <th>Ciudad</th>
+        <th>Estado Servicio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for servicio in servicios %}
+      <tr>
+        <td>{{servicio.id_registro}}</td>
+        <td>{{servicio.fecha_inicio}}</td>
+        <td>{{servicio.fecha_fin}}</td>
+        <td>{{servicio.id_empresa}}</td>
+        <td>{{servicio.ciudad}}</td>
+        <td>{{servicio.estado_servicio}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}
